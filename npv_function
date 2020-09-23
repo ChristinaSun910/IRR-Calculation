@@ -1,5 +1,5 @@
-def npv_func(rate,cashflows):
+def npv_func (rate, cashflows):
     total = 0
-    for num,cashflow in enumerate(cashflows):
-        total = total+ cashflow/ (1+rate) ** num
+    for num, cashflow in enumerate (cashflows):
+        total = total+ cashflow / (1 + rate) ** num
     return total
