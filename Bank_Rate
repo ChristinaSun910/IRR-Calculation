@@ -1,0 +1,5 @@
+def discountRate_func(num_year,cashflow_per_year,rate): 
+    total=0
+    for i in range(num_year):
+        total=total+cashflow_per_year/(1+rate)**(i+1)
+    return total
