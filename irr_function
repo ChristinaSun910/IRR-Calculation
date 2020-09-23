@@ -1,0 +1,17 @@
+def irr (cashflows, iterations=100000):
+    rate_low = 0
+    rate_high = 1
+    rate = (rate_low + rate_high) / 2
+    npv_final = npv_func(rate, cashflows)
+    
+    while abs(npv_final) > 0.001:
+        if npv_final > 0:
+            rate_low = rate
+            rate = (rate_low + rate_high) / 2
+            npv_final = npv_func(rate, cashflows)
+        else:
+            rate_high = rate
+            rate = (rate_low + rate_high) / 2
+            npv_final = npv_func(rate, cashflows)
+    return rate
+            
